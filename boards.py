@@ -358,5 +358,4 @@ boards_dict = {'0204:0d28': ['RedBear Blend 2', 'RedBear BLE Nano 2'],
  '8086:BABE': ['Intel® Galileo Gen2', 'Intel® Galileo'],
  '8087:0AB6': ['Arduino/Genuino 101'],
  'd3e0:601a': ['Dwenguino'],
- 'd3e0:601b': ['Dwenguino'],
- 'yikes': ['w', 'o', 'wow']}
+ 'd3e0:601b': ['Dwenguino']}
