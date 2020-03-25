@@ -1,0 +1,75 @@
+# Talk² Contribution Platform Configuration
+#
+# For more information see:
+# * https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+# * https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+#
+
+##############################################################
+## Talk² boards based on AVR MCUs (like Whisper Node 0.3v)
+##############################################################
+
+menu.mhz=CPU Speed
+
+whispernode.name=Talk2 Whisper Node
+
+whispernode.upload.tool=arduino:avrdude
+whispernode.upload.protocol=arduino
+whispernode.upload.maximum_size=30720
+whispernode.upload.maximum_data_size=2048
+
+whispernode.bootloader.tool=arduino:avrdude
+whispernode.bootloader.unlock_bits=0x3F
+whispernode.bootloader.lock_bits=0x2F
+whispernode.bootloader.high_fuses=0xDA
+whispernode.bootloader.extended_fuses=0x05
+
+#
+# Other Clock speeds.
+#  For 8MHz using the internal RC Oscillator, we adjust fuses, use the same
+#  bootloader binary, and halve the upload rate.
+#
+whispernode.menu.mhz.16MHz=16MHz External Crystal (default)
+whispernode.menu.mhz.16MHz.build.f_cpu=16000000L
+whispernode.menu.mhz.16MHz.bootloader.low_fuses=0xEF
+whispernode.menu.mhz.16MHz.upload.speed=115200
+whispernode.menu.mhz.16MHz.bootloader.file=talk2boot/talk2boot_atmega328_16MHz_115200.hex
+
+whispernode.menu.mhz.16MHz250Kbps=16MHz External Crystal @ 250Kbps
+whispernode.menu.mhz.16MHz250Kbps.build.f_cpu=16000000L
+whispernode.menu.mhz.16MHz250Kbps.bootloader.low_fuses=0xEF
+whispernode.menu.mhz.16MHz250Kbps.upload.speed=250000
+whispernode.menu.mhz.16MHz250Kbps.bootloader.file=talk2boot/talk2boot_atmega328_16MHz_250000.hex
+
+whispernode.menu.mhz.16MHz500Kbps=16MHz External Crystal @ 500Kbps
+whispernode.menu.mhz.16MHz500Kbps.build.f_cpu=16000000L
+whispernode.menu.mhz.16MHz500Kbps.bootloader.low_fuses=0xEF
+whispernode.menu.mhz.16MHz500Kbps.upload.speed=500000
+whispernode.menu.mhz.16MHz500Kbps.bootloader.file=talk2boot/talk2boot_atmega328_16MHz_500000.hex
+
+whispernode.menu.mhz.8MHz=8MHz Internal Oscillator
+whispernode.menu.mhz.8MHz.build.f_cpu=8000000L
+whispernode.menu.mhz.8MHz.bootloader.low_fuses=0xD2
+whispernode.menu.mhz.8MHz.upload.speed=57600
+whispernode.menu.mhz.8MHz.bootloader.file=talk2boot/talk2boot_atmega328_8MHz_57600.hex
+
+whispernode.menu.mhz.2MHz=2MHz External Crystal (div/8)
+whispernode.menu.mhz.2MHz.build.f_cpu=2000000L
+whispernode.menu.mhz.2MHz.bootloader.low_fuses=0x6F
+whispernode.menu.mhz.2MHz.upload.speed=19200
+whispernode.menu.mhz.2MHz.bootloader.file=talk2boot/talk2boot_atmega328_2MHz_19200.hex
+
+whispernode.menu.mhz.1MHz=1MHz Internal Oscillator (div/8)
+whispernode.menu.mhz.1MHz.build.f_cpu=1000000L
+whispernode.menu.mhz.1MHz.bootloader.low_fuses=0x52
+whispernode.menu.mhz.1MHz.upload.speed=4800
+whispernode.menu.mhz.1MHz.bootloader.file=talk2boot/talk2boot_atmega328_1MHz_4800.hex
+
+# Talk2 platforms should be UNO-like more than anything else.
+whispernode.build.board=AVR_UNO
+whispernode.build.core=arduino:arduino
+whispernode.build.variant=arduino:eightanaloginputs
+whispernode.build.mcu=atmega328p
+
+
+

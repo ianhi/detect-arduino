@@ -1,0 +1,32 @@
+# Open Panzer TCB Board Configuration
+#
+# For more information see:
+# - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+# - https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+# - http://forum.arduino.cc/index.php?topic=457405
+
+
+##############################################################
+
+optcb2560.name=Open Panzer TCB (Mega 2560)
+
+optcb2560.bootloader.tool=arduino:avrdude
+optcb2560.bootloader.extended_fuses=0xFD
+optcb2560.bootloader.high_fuses=0xDA
+optcb2560.bootloader.low_fuses=0xF7
+optcb2560.bootloader.unlock_bits=0x3F
+optcb2560.bootloader.lock_bits=0x0F
+optcb2560.bootloader.file=openpanzer_boot/optcb2560_boot.hex
+
+optcb2560.build.mcu=atmega2560
+optcb2560.build.f_cpu=16000000L
+optcb2560.build.core=arduino:arduino
+optcb2560.build.variant=arduino:mega
+optcb2560.build.board=AVR_MEGA2560
+
+optcb2560.upload.protocol=wiring
+optcb2560.upload.maximum_size=258048
+optcb2560.upload.maximum_data_size=8192
+optcb2560.upload.speed=115200
+optcb2560.upload.tool=arduino:avrdude
+

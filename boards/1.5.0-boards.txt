@@ -1,0 +1,103 @@
+# Copyright (c) 2014-2017 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+menu.cache=Cache
+menu.speed=CPU Speed
+menu.opt=Optimize
+menu.maxqspi=Max QSPI
+menu.usbstack=USB Stack
+menu.debug=Debug
+menu.crystal=Crystal
+
+# Moteino M0 (SAMD21)
+# ------------------------------
+moteino_m0.name=Moteino M0
+moteino_m0.vid.0=0x04d8
+moteino_m0.pid.0=0xeee5
+moteino_m0.vid.1=0x04d8
+moteino_m0.pid.1=0xeee4
+moteino_m0.vid.2=0x04d8
+moteino_m0.pid.2=0xeee8
+moteino_m0.upload.tool=bossac
+moteino_m0.upload.protocol=sam-ba
+moteino_m0.upload.maximum_size=253952
+moteino_m0.upload.use_1200bps_touch=true
+moteino_m0.upload.wait_for_upload_port=true
+moteino_m0.upload.native_usb=true
+moteino_m0.build.mcu=cortex-m0plus
+moteino_m0.build.f_cpu=48000000L
+moteino_m0.build.usb_product="Moteino M0"
+moteino_m0.build.usb_manufacturer="LowPowerLab LLC"
+moteino_m0.build.board=SAMD_ZERO
+moteino_m0.build.core=arduino
+moteino_m0.build.extra_flags=-DARDUINO_SAMD_ZERO -DARM_MATH_CM0PLUS -DMOTEINO_M0 -D__SAMD21G18A__ -DVERY_LOW_POWER {build.usb_flags}
+moteino_m0.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+moteino_m0.build.openocdscript=openocd_scripts/moteino_m0.cfg
+moteino_m0.build.variant=moteino_m0
+moteino_m0.build.variant_system_lib=
+moteino_m0.build.vid=0x04d8
+moteino_m0.build.pid=0xeee5
+moteino_m0.bootloader.tool=openocd
+moteino_m0.bootloader.file=moteino_m0/bootloader-moteino_m0-v3.4.0-LowPowerLab.bin
+moteino_m0.menu.crystal.external=External 32.768Khz
+moteino_m0.menu.crystal.internal=Internal (Crystalless!)
+moteino_m0.menu.crystal.internal.build.flags.crystal=-DCRYSTALLESS
+moteino_m0.menu.usbstack.arduino=Arduino
+moteino_m0.menu.usbstack.tinyusb=TinyUSB
+moteino_m0.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+moteino_m0.menu.debug.off=Off
+moteino_m0.menu.debug.on=On
+moteino_m0.menu.debug.on.build.flags.debug=-g
+
+# Current Ranger M0 (SAMD21)
+# ------------------------------
+currentranger_m0.name=CurrentRanger
+currentranger_m0.vid.0=0x04d8
+currentranger_m0.pid.0=0xee4c
+currentranger_m0.vid.1=0x04d8
+currentranger_m0.pid.1=0xee48
+currentranger_m0.vid.2=0x04d8
+currentranger_m0.pid.2=0xee44
+currentranger_m0.upload.tool=bossac
+currentranger_m0.upload.protocol=sam-ba
+currentranger_m0.upload.maximum_size=253952
+currentranger_m0.upload.use_1200bps_touch=true
+currentranger_m0.upload.wait_for_upload_port=true
+currentranger_m0.upload.native_usb=true
+currentranger_m0.build.mcu=cortex-m0plus
+currentranger_m0.build.f_cpu=48000000L
+currentranger_m0.build.usb_product="CurrentRanger M0"
+currentranger_m0.build.usb_manufacturer="LowPowerLab LLC"
+currentranger_m0.build.board=SAMD_ZERO
+currentranger_m0.build.core=arduino
+currentranger_m0.build.extra_flags=-DARDUINO_SAMD_ZERO -DARM_MATH_CM0PLUS -DCURRENT_RANGER -D__SAMD21G18A__ -DVERY_LOW_POWER {build.usb_flags}
+currentranger_m0.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+currentranger_m0.build.openocdscript=openocd_scripts/currentranger_m0.cfg
+currentranger_m0.build.variant=currentranger_m0
+currentranger_m0.build.variant_system_lib=
+currentranger_m0.build.vid=0x04d8
+currentranger_m0.build.pid=0xee4c
+currentranger_m0.bootloader.tool=openocd
+currentranger_m0.bootloader.file=currentranger/bootloader-currentranger-v3.4.0-LowPowerLab.bin
+currentranger_m0.menu.crystal.internal=Internal (Crystalless!)
+currentranger_m0.menu.crystal.internal.build.flags.crystal=-DCRYSTALLESS
+currentranger_m0.menu.crystal.external=External 32.768Khz
+currentranger_m0.menu.usbstack.arduino=Arduino
+currentranger_m0.menu.usbstack.tinyusb=TinyUSB
+currentranger_m0.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+currentranger_m0.menu.debug.off=Off
+currentranger_m0.menu.debug.on=On
+currentranger_m0.menu.debug.on.build.flags.debug=-g

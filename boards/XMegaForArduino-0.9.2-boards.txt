@@ -1,0 +1,166 @@
+# boards.txt - for XMegaForArduino project
+##############################################################
+
+xmega64d4.name=ATXMega64D4
+
+xmega64d4.upload.protocol=arduino
+xmega64d4.upload.maximum_size=65536
+xmega64d4.upload.speed=115200
+xmega64d4.upload.tool=avrdude
+# fuse 1: see sect. 9.7.1 and 9.7.2 in D4 manual
+xmega64d4.bootloader.fuse1=0xff
+# fuse 2: BOD disable during sleep, boot to bootloader
+xmega64d4.bootloader.fuse2=0xbf
+# fuse 4: enable 'reset', no startup time delay, WD config ok
+xmega64d4.bootloader.fuse4=0xff
+# fuse 5: BOD detect to 'continuous' at 2.6v, erase EEPROM on erase
+xmega64d4.bootloader.fuse5=0xea
+xmega64d4.bootloader.path=xmega64d4
+xmega64d4.bootloader.file=xmega64d4/xmegaBOOT_xmega0.hex
+xmega64d4.bootloader.unlock_bits=0xFF
+xmega64d4.bootloader.lock_bits=0xBF
+xmega64d4.bootloader.tool=avrdude
+xmega64d4.build.mcu=atxmega64d4
+xmega64d4.build.f_cpu=32000000L
+xmega64d4.build.core=xmega
+xmega64d4.build.variant=xmega64d4
+xmega64d4.build.board=XMEGA_64D4
+
+##############################################################
+
+xmega32e5.name=ATXMega32E5
+
+xmega32e5.upload.protocol=arduino
+xmega32e5.upload.maximum_size=32768
+xmega32e5.upload.speed=115200
+xmega32e5.upload.tool=avrdude
+# fuse 1: see sect. 9.7.1 and 9.7.2 in D4 manual
+xmega32e5.bootloader.fuse1=0xff
+# fuse 2: BOD disable during sleep, boot to bootloader
+xmega32e5.bootloader.fuse2=0xbf
+# fuse 4: enable 'reset', no startup time delay, WD config ok
+xmega32e5.bootloader.fuse4=0xff
+# fuse 5: BOD detect to 'continuous' at 2.6v, erase EEPROM on erase
+xmega32e5.bootloader.fuse5=0xea
+xmega32e5.bootloader.path=xmega32e5
+xmega32e5.bootloader.file=xmega32e5/xmegaBOOT_xmega0.hex
+xmega32e5.bootloader.unlock_bits=0xFF
+xmega32e5.bootloader.lock_bits=0xBF
+xmega32e5.build.mcu=atxmega32e5
+xmega32e5.build.f_cpu=32000000L
+xmega32e5.build.core=xmega
+xmega32e5.build.variant=xmega32e5
+xmega32e5.build.board=XMEGA_32E5
+
+
+##############################################################
+
+cc0x32e5.name=CC0 ATXMega32E5 breakout
+
+cc0x32e5.upload.protocol=arduino
+cc0x32e5.upload.maximum_size=32768
+cc0x32e5.upload.speed=115200
+cc0x32e5.upload.tool=avrdude
+# fuse 1: see sect. 9.7.1 and 9.7.2 in D4 manual
+cc0x32e5.bootloader.fuse1=0xff
+# fuse 2: BOD disable during sleep, boot to bootloader
+cc0x32e5.bootloader.fuse2=0xbf
+# fuse 4: enable 'reset', no startup time delay, WD config ok
+cc0x32e5.bootloader.fuse4=0xff
+# fuse 5: BOD detect to 'continuous' at 2.6v, erase EEPROM on erase
+cc0x32e5.bootloader.fuse5=0xea
+cc0x32e5.bootloader.path=cc0_atxmega_e5
+cc0x32e5.bootloader.file=cc0_atxmega_e5/xmegaBOOT_xmega0.hex
+cc0x32e5.bootloader.unlock_bits=0xFF
+cc0x32e5.bootloader.lock_bits=0xBF
+cc0x32e5.build.mcu=atxmega32e5
+cc0x32e5.build.f_cpu=32000000L
+cc0x32e5.build.core=xmega
+cc0x32e5.build.variant=cc0_atxmega_e5
+cc0x32e5.build.board=XMEGA_CC0
+
+
+##############################################################
+
+xmega128a1.name=ATXMega128A1
+
+xmega128a1.upload.protocol=wiring
+xmega128a1.upload.maximum_size=131072
+xmega128a1.upload.speed=115200
+xmega128a1.upload.tool=avrdude
+# fuse 1: see sect. 9.7.1 and 9.7.2 in D4 manual
+xmega128a1.bootloader.fuse1=0xff
+# fuse 2: BOD disable during sleep, boot to bootloader
+xmega128a1.bootloader.fuse2=0xbf
+# fuse 4: enable 'reset', no startup time delay, WD config ok
+xmega128a1.bootloader.fuse4=0xff
+# fuse 5: BOD detect to 'continuous' at 2.6v, erase EEPROM on erase
+xmega128a1.bootloader.fuse5=0xea
+xmega128a1.bootloader.path=xmega128a1
+xmega128a1.bootloader.file=xmega128a1/xmegaBOOT_xmega0.hex
+xmega128a1.bootloader.unlock_bits=0xFF
+xmega128a1.bootloader.lock_bits=0xBF
+xmega128a1.build.mcu=atxmega128a1
+xmega128a1.build.f_cpu=32000000L
+xmega128a1.build.core=xmega
+xmega128a1.build.variant=xmega128a1
+xmega128a1.build.board=XMEGA_128A1
+
+
+##############################################################
+
+xmega128a1u.name=ATXmega128A1U
+
+xmega128a1u.upload.protocol=wiring
+xmega128a1u.upload.maximum_size=131072
+xmega128a1u.upload.speed=115200
+xmega128a1u.upload.tool=avrdude
+# fuse 1: see sect. 9.7.1 and 9.7.2 in D4 manual
+xmega128a1u.bootloader.fuse1=0xff
+# fuse 2: BOD disable during sleep, boot to bootloader
+xmega128a1u.bootloader.fuse2=0xbf
+# fuse 4: enable 'reset', no startup time delay, WD config ok
+xmega128a1u.bootloader.fuse4=0xff
+# fuse 5: BOD detect to 'continuous' at 2.6v, erase EEPROM on erase
+xmega128a1u.bootloader.fuse5=0xea
+xmega128a1u.bootloader.path=xmega128a1u
+xmega128a1u.bootloader.file=xmega128a1u/xmegaBOOT_xmega0.hex
+xmega128a1u.bootloader.unlock_bits=0xFF
+xmega128a1u.bootloader.lock_bits=0xBF
+xmega128a1u.build.mcu=atxmega128a1u
+xmega128a1u.build.f_cpu=32000000L
+xmega128a1u.build.core=xmega
+xmega128a1u.build.variant=xmega128a1u
+xmega128a1u.build.board=XMEGA_128A1U
+# see https://raw.githubusercontent.com/arduino/ArduinoISP/master/usbdrv/USB-IDs-for-free.txt
+xmega128a1u.build.vid=0x16c0
+xmega128a1u.build.pid=0x05e1
+
+
+##############################################################
+
+RockSolid128A.name=Rock Solid XMega 128A
+
+RockSolid128A.upload.protocol=wiring
+RockSolid128A.upload.maximum_size=131072
+RockSolid128A.upload.speed=115200
+RockSolid128A.upload.tool=avrdude
+# fuse 1: see sect. 9.7.1 and 9.7.2 in D4 manual
+RockSolid128A.bootloader.fuse1=0xff
+# fuse 2: BOD disable during sleep, boot to bootloader
+RockSolid128A.bootloader.fuse2=0xbf
+# fuse 4: enable 'reset', no startup time delay, WD config ok
+RockSolid128A.bootloader.fuse4=0xff
+# fuse 5: BOD detect to 'continuous' at 2.6v, erase EEPROM on erase
+RockSolid128A.bootloader.fuse5=0xea
+RockSolid128A.bootloader.path=RockSolid128A
+RockSolid128A.bootloader.file=RockSolid128A/xmegaBOOT_xmega0.hex
+RockSolid128A.bootloader.unlock_bits=0xFF
+RockSolid128A.bootloader.lock_bits=0xBF
+RockSolid128A.build.mcu=atxmega128a1u
+RockSolid128A.build.f_cpu=32000000L
+RockSolid128A.build.core=xmega
+RockSolid128A.build.variant=RockSolid128A
+RockSolid128A.build.board=XMEGA_ROCKSOLID128A
+
+

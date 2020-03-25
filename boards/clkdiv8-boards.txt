@@ -1,0 +1,22 @@
+##############################################################
+# Sparrow Configuration
+##############################################################
+sparrow.name=Sparrow
+
+sparrow.build.mcu=atmega128rfa1
+sparrow.build.f_cpu=16000000L
+sparrow.build.board=AVR_SPARROW
+sparrow.build.core=arduino:arduino
+sparrow.build.variant=sparrowv4
+
+sparrow.upload.protocol=arduino
+sparrow.upload.tool=arduino:avrdude
+sparrow.upload.maximum_size=126976
+sparrow.upload.speed=57600
+
+sparrow.bootloader.low_fuses=0xFF
+sparrow.bootloader.high_fuses=0xDA
+sparrow.bootloader.extended_fuses=0xF5
+sparrow.bootloader.unlock_bits=0x3F
+sparrow.bootloader.lock_bits=0x0F
+sparrow.bootloader.file=sparrow/ATmegaBOOT_168_atmega128rfa1.hex

@@ -1,0 +1,143 @@
+# Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+menu.cache=Cache
+menu.speed=CPU Speed
+menu.opt=Optimize
+menu.maxqspi=Max QSPI
+menu.usbstack=USB Stack
+menu.debug=Debug
+menu.i2s=I2S Audio Port
+menu.spi=SPI SD card
+menu.serialsok=SerialSOK
+
+# SoK Zero Dawn Rev 1.5b (SAMD21J18A)
+# ---------------------------------------
+sok_zero_dawn.name=SoK Zero Dawn (SAMD21J18A)
+sok_zero_dawn.vid.0=0x1993
+sok_zero_dawn.pid.0=0x0119
+sok_zero_dawn.vid.1=0x1993
+sok_zero_dawn.pid.1=0x0126
+sok_zero_dawn.upload.tool=bossac
+sok_zero_dawn.upload.protocol=sam-ba
+sok_zero_dawn.upload.maximum_size=262144
+sok_zero_dawn.upload.offset=0x2000
+sok_zero_dawn.upload.use_1200bps_touch=true
+sok_zero_dawn.upload.wait_for_upload_port=true
+sok_zero_dawn.upload.native_usb=true
+sok_zero_dawn.build.mcu=cortex-m0plus
+sok_zero_dawn.build.f_cpu=48000000L
+sok_zero_dawn.build.usb_product="SoK Zero Dawn"
+sok_zero_dawn.build.usb_manufacturer="NeKuNeKo Inc."
+sok_zero_dawn.build.board=SAMD_SOK_ZERO_DAWN
+sok_zero_dawn.build.core=arduino
+sok_zero_dawn.build.extra_flags=-D__SAMD21J18A__ -DARDUINO_SAMD_ZERO -DARM_MATH_CM0PLUS -DNEKUNEKO_SOK_ZERO_DAWN {build.usb_flags}
+sok_zero_dawn.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+sok_zero_dawn.build.openocdscript=openocd_scripts/arduino_zero.cfg
+sok_zero_dawn.build.variant=sok_zero_dawn
+sok_zero_dawn.build.variant_system_lib=
+sok_zero_dawn.build.vid=0x1993
+sok_zero_dawn.build.pid=0x0119
+sok_zero_dawn.bootloader.tool=openocd
+sok_zero_dawn.bootloader.file=sok_zero_dawn/bootloader-sok_zero_dawn-v3.7.0-30-gb7dffef.bin
+sok_zero_dawn.menu.debug.off=Off
+sok_zero_dawn.menu.debug.on=On
+sok_zero_dawn.menu.debug.on.build.flags.debug=-g -DDEBUG
+sok_zero_dawn.menu.spi.int=Use internal SPI
+sok_zero_dawn.menu.spi.int.build.flags.spi=-DUSE_INTERNAL_SPI
+sok_zero_dawn.menu.spi.ext=Use external SPI
+sok_zero_dawn.menu.spi.ext.build.flags.spi=-DUSE_EXTERNAL_SPI
+sok_zero_dawn.menu.i2s.int=Use internal I2S
+sok_zero_dawn.menu.i2s.int.build.flags.i2s=-DUSE_INTERNAL_I2S
+sok_zero_dawn.menu.i2s.ext=Use external I2S
+sok_zero_dawn.menu.i2s.ext.build.flags.i2s=-DUSE_EXTERNAL_I2S
+sok_zero_dawn.menu.serialsok.off=Disabled
+sok_zero_dawn.menu.serialsok.on=Enabled
+sok_zero_dawn.menu.serialsok.on.build.flags.serialsok=-DUSE_SERIAL_SOK
+
+# SoK M4 Advance 1.5b (SAMD51J20A)
+# ---------------------------------------
+sok_m4_advance.name=SoK M4 Advance (SAMD51J20A)
+sok_m4_advance.vid.0=0x1993
+sok_m4_advance.pid.0=0x0219
+sok_m4_advance.vid.1=0x1993
+sok_m4_advance.pid.1=0x0226
+sok_m4_advance.upload.tool=bossac18
+sok_m4_advance.upload.protocol=sam-ba
+sok_m4_advance.upload.maximum_size=1032192
+sok_m4_advance.upload.offset=0x4000
+sok_m4_advance.upload.use_1200bps_touch=true
+sok_m4_advance.upload.wait_for_upload_port=true
+sok_m4_advance.upload.native_usb=true
+sok_m4_advance.build.mcu=cortex-m4
+sok_m4_advance.build.usb_product="SoK M4 Advance"
+sok_m4_advance.build.usb_manufacturer="NeKuNeKo Inc."
+sok_m4_advance.build.board=SAMD_SOK_M4_ADVANCE
+sok_m4_advance.build.core=arduino
+sok_m4_advance.build.extra_flags=-D__SAMD51J19A__ -DADAFRUIT_METRO_M4_EXPRESS -D_VARIANT_METRO_M4_ -DCRYSTALLESS -D__SAMD51__ {build.usb_flags} -D__FPU_PRESENT -DARM_MATH_CM4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
+sok_m4_advance.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+sok_m4_advance.build.openocdscript=openocd_scripts/arduino_zero.cfg
+sok_m4_advance.build.variant=sok_m4_advance
+sok_m4_advance.build.variant_system_lib=
+sok_m4_advance.build.vid=0x1993
+sok_m4_advance.build.pid=0x0219
+sok_m4_advance.bootloader.tool=openocd
+sok_m4_advance.bootloader.file=sok_m4_advance/bootloader-sok_m4_advance-v3.7.0-30-gb7dffef.bin
+sok_m4_advance.compiler.arm.cmsis.ldflags="-L{build.variant.path}" -larm_cortexM4lf_math -mfloat-abi=hard -mfpu=fpv4-sp-d16
+sok_m4_advance.menu.cache.on=Enabled
+sok_m4_advance.menu.cache.on.build.cache_flags=-DENABLE_CACHE
+sok_m4_advance.menu.cache.off=Disabled
+sok_m4_advance.menu.cache.off.build.cache_flags=
+sok_m4_advance.menu.speed.120=120 MHz (standard)
+sok_m4_advance.menu.speed.120.build.f_cpu=120000000L
+sok_m4_advance.menu.speed.150=150 MHz (overclock)
+sok_m4_advance.menu.speed.150.build.f_cpu=150000000L
+sok_m4_advance.menu.speed.180=180 MHz (overclock)
+sok_m4_advance.menu.speed.180.build.f_cpu=180000000L
+sok_m4_advance.menu.speed.200=200 MHz (overclock)
+sok_m4_advance.menu.speed.200.build.f_cpu=200000000L
+sok_m4_advance.menu.opt.small=Small (-Os) (standard)
+sok_m4_advance.menu.opt.small.build.flags.optimize=-Os
+sok_m4_advance.menu.opt.fast=Fast (-O2)
+sok_m4_advance.menu.opt.fast.build.flags.optimize=-O2
+sok_m4_advance.menu.opt.faster=Faster (-O3)
+sok_m4_advance.menu.opt.faster.build.flags.optimize=-O3
+sok_m4_advance.menu.opt.fastest=Fastest (-Ofast)
+sok_m4_advance.menu.opt.fastest.build.flags.optimize=-Ofast
+sok_m4_advance.menu.opt.dragons=Here be dragons (-Ofast -funroll-loops)
+sok_m4_advance.menu.opt.dragons.build.flags.optimize=-Ofast -funroll-loops
+sok_m4_advance.menu.maxqspi.50=50 MHz (standard)
+sok_m4_advance.menu.maxqspi.fcpu=CPU Speed / 2
+sok_m4_advance.menu.maxqspi.50.build.flags.maxqspi=-DVARIANT_QSPI_BAUD_DEFAULT=50000000
+sok_m4_advance.menu.maxqspi.fcpu=CPU Speed / 2
+sok_m4_advance.menu.maxqspi.fcpu.build.flags.maxqspi=-DVARIANT_QSPI_BAUD_DEFAULT=({build.f_cpu})
+sok_m4_advance.menu.usbstack.arduino=Arduino
+sok_m4_advance.menu.usbstack.tinyusb=TinyUSB
+sok_m4_advance.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+sok_m4_advance.menu.debug.off=Off
+sok_m4_advance.menu.debug.on=On
+sok_m4_advance.menu.debug.on.build.flags.debug=-g -DDEBUG
+sok_m4_advance.menu.spi.int=Use internal SPI
+sok_m4_advance.menu.spi.int.build.flags.spi=-DUSE_INTERNAL_SPI
+sok_m4_advance.menu.spi.ext=Use external SPI
+sok_m4_advance.menu.spi.ext.build.flags.spi=-DUSE_EXTERNAL_SPI
+sok_m4_advance.menu.i2s.int=Use internal I2S
+sok_m4_advance.menu.i2s.int.build.flags.i2s=-DUSE_INTERNAL_I2S
+sok_m4_advance.menu.i2s.ext=Use external I2S
+sok_m4_advance.menu.i2s.ext.build.flags.i2s=-DUSE_EXTERNAL_I2S
+sok_m4_advance.menu.serialsok.off=Disabled
+sok_m4_advance.menu.serialsok.on=Enabled
+sok_m4_advance.menu.serialsok.on.build.flags.serialsok=-DUSE_SERIAL_SOK

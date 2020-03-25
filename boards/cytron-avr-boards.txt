@@ -1,0 +1,49 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+menu.cpu=Processor
+
+##############################################################
+
+digispark-tiny.name=Cuteduino
+digispark-tiny.upload.using=micronucleusprog
+digispark-tiny.upload.protocol=usb
+digispark-tiny.upload.tool=micronucleus
+digispark-tiny.upload.maximum_size=6012
+digispark-tiny.build.mcu=attiny85
+digispark-tiny.build.f_cpu=16500000L
+digispark-tiny.build.board=AVR_DIGISPARK
+digispark-tiny.build.core=tiny
+digispark-tiny.build.variant=digispark
+digispark-tiny.upload.wait_for_upload_port = false
+digispark-tiny.upload.use_1200bps_touch = false
+digispark-tiny.upload.disable_flushing = false
+digispark-tiny.bootloader.low_fuses=0xf1
+digispark-tiny.bootloader.high_fuses=0xd5
+digispark-tiny.bootloader.extended_fuses=0xfe
+digispark-tiny.bootloader.lock_bits=
+digispark-tiny.bootloader.unlock_bits=
+digispark-tiny.bootloader.file=micronucleus/micronucleus-1.11.hex
+digispark-tiny.bootloader.tool=arduino:avrdude
+
+##############################################################
+
+ctuno.name=CT UNO
+ctuno.upload.tool=arduino:avrdude
+ctuno.upload.protocol=arduino
+ctuno.upload.maximum_size=32256
+ctuno.upload.maximum_data_size=2048
+ctuno.upload.speed=115200
+ctuno.bootloader.tool=arduino:avrdude
+ctuno.bootloader.low_fuses=0xFF
+ctuno.bootloader.high_fuses=0xDE
+ctuno.bootloader.extended_fuses=0x05
+ctuno.bootloader.unlock_bits=0x3F
+ctuno.bootloader.lock_bits=0x0F
+ctuno.bootloader.file=arduino:optiboot/optiboot_atmega328.hex
+ctuno.build.mcu=atmega328p
+ctuno.build.f_cpu=16000000L
+ctuno.build.board=AVR_ctuno
+ctuno.build.core=arduino:arduino
+ctuno.build.variant=arduino:standard
+
+##############################################################

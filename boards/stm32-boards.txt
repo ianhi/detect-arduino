@@ -1,0 +1,76 @@
+# STM32 Boards
+
+menu.device_variant=Variant
+menu.bootloader_version=Bootloader version
+menu.upload_method=Upload method
+
+########################### IntoRobot Atom - STM32F103RBT6 ###########################
+
+#Atom.name=IntoRobot Atom
+#Atom.build.variant=atom
+#Atom.build.core=intorobot
+#Atom.build.board=atom
+#Atom.build.cpu_flags=-DSTM32F103xB
+#Atom.build.platform_device=STM32F103xB
+#Atom.build.platform_id=0
+#Atom.build.mcu=cortex-m3
+#Atom.build.f_cpu=72000000L
+#Atom.build.mcu_type=STM321xx
+#Atom.build.ld_script=linker_stm32f103xb_app.ld
+#Atom.build.startup=startup_stm32f103xb.o
+#Atom.build.c_cpp_extra_flags=
+#Atom.build.stack_size=400
+#Atom.build.threading_flag=0
+#Atom.build.extra_libs=-lwiring_ex -lplatform -lhal -lsystem -lwiring -lservices
+#Atom.build.extra_ld_flags=-nostartfiles --specs=nano.specs -lc -lnosys -Wl,--start-group -lgcc -lc -Wl,--end-group
+
+#Atom.upload.tool=maple_upload
+#Atom.upload.maximum_size=131072
+#Atom.upload.maximum_data_size=20480
+#Atom.upload.tool=maple_upload
+#Atom.upload.protocol=maple_upload
+#Atom.upload.file_type=bin
+#Atom.upload.wait_for_upload_port=true
+#Atom.upload.auto_reset=true
+#Atom.upload.usbID=0483:df11
+#Atom.upload.altID=0
+#Atom.upload.dfuse_addr=0x08007000
+
+########################### IntoRobot Neutron - STM32F411CEU6 ###########################
+
+Neutron.name=IntoRobot Neutron
+Neutron.build.variant=neutron
+Neutron.build.core=intorobot
+Neutron.build.platform=stm32
+Neutron.build.board=neutron
+Neutron.build.platform_id=1
+Neutron.build.cpu_flags=-DSTM32F411xE
+Neutron.build.platform_device=STM32F411xE
+#Neutron.build.ld_script=linker_stm32f411xe_app.ld
+Neutron.build.ld_script=linker_stm32f411xe.ld
+Neutron.build.startup=startup_stm32f411xe.o
+Neutron.build.mcu=cortex-m4
+Neutron.build.f_cpu=92000000L
+Neutron.build.mcu_type=STM32F4xx
+#Neutron.build.extra_libs=-lnewlib_nano -lwiring_ex -lplatform -lhal -lsystem -lwiring -lservices -lPDMFilter_CM4_GCC
+Neutron.build.extra_libs=-lboard -lplatform -lPDMFilter_CM4_GCC
+Neutron.build.c_cpp_extra_flags=-mfloat-abi=softfp -mfpu=fpv4-sp-d16
+Neutron.build.stack_size=1400
+Neutron.build.threading_flag=0
+#Neutron.build.extra_ld_flags=-nostartfiles --specs=nano.specs "--specs={build.variant.path}/lib/custom-nano.specs"
+Neutron.build.extra_ld_flags=--specs=nano.specs --specs=nosys.specs -lc -lnosys -Wl,--start-group -lgcc -lc -Wl,--end-group
+
+Neutron.upload.tool=maple_upload
+Neutron.upload.protocol=maple_upload
+Neutron.upload.maximum_size=524288
+Neutron.upload.maximum_data_size=131072
+Neutron.upload.file_type=bin
+Neutron.upload.wait_for_upload_port=true
+Neutron.upload.auto_reset=true
+Neutron.upload.usbID=0483:df11
+Neutron.upload.altID=0
+Neutron.upload.dfuse_addr=0x08020000
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+

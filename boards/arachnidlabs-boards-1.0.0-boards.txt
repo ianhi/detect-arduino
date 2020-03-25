@@ -1,0 +1,42 @@
+# Arachnid Labs Tsunami board configuration
+#
+# For more information see:
+# - https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
+# - https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+
+##############################################################
+
+# Tsunami configuration
+tsunami.name=Arachnid Labs Tsunami
+tsunami.build.vid.0=0x1209
+tsunami.build.pid.0=0x1AB5
+tsunami.build.vid.1=0x1209
+tsunami.build.pid.1=0x1AB6
+
+tsunami.upload.tool=arduino:avrdude
+tsunami.upload.protocol=avr109
+tsunami.upload.maximum_size=28672
+tsunami.upload.data_size=2560
+tsunami.upload.speed=57600
+tsunami.upload.disable_flushing=true
+tsunami.upload.use_1200bps_touch=true
+tsunami.upload.wait_for_upload_port=true
+
+tsunami.bootloader.tool=arduino:avrdude
+tsunami.bootloader.low_fuses=0xff
+tsunami.bootloader.high_fuses=0xd8
+tsunami.bootloader.extended_fuses=0xcb
+tsunami.bootloader.file=caterina/Caterina-tsunami.hex
+tsunami.bootloader.unlock_bits=0x3F
+tsunami.bootloader.lock_bits=0x2F
+
+tsunami.build.mcu=atmega32u4
+tsunami.build.f_cpu=16000000L
+tsunami.build.vid=0x1209
+tsunami.build.pid=0x1AB5
+tsunami.build.board=AVR_TSUNAMI
+tsunami.build.usb_product="Tsunami"
+tsunami.build.usb_manufacturer="Arachnid Labs"
+tsunami.build.core=arduino:arduino
+tsunami.build.variant=tsunami
+tsunami.build.extra_flags={build.usb_flags}

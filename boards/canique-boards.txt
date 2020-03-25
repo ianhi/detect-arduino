@@ -1,0 +1,66 @@
+############################################################################
+menu.mhz=CPU Speed
+
+mkone.name=Canique MK1
+mkone.upload.tool=arduino:avrdude
+mkone.upload.protocol=arduino
+mkone.upload.maximum_size=31744
+mkone.upload.speed=9600
+mkone.upload.maximum_data_size=2048
+mkone.bootloader.low_fuses=0x5E
+mkone.bootloader.high_fuses=0xD4
+mkone.bootloader.extended_fuses=0xFE
+mkone.bootloader.file=optiboot_atmega328_pro_2MHz_BLINKD9.hex
+mkone.bootloader.unlock_bits=0x3F
+mkone.bootloader.lock_bits=0x0F
+mkone.bootloader.tool=arduino:avrdude
+mkone.build.core=arduino:arduino
+mkone.build.variant=arduino:standard
+mkone.build.mcu=atmega328p
+mkone.build.board=AVR_ATmega328
+
+##############
+mkone.menu.mhz.production=Run@16MHz, Boot@16MHz, BOD@2.7V
+mkone.menu.mhz.production.bootloader.low_fuses=0xDE
+mkone.menu.mhz.production.bootloader.high_fuses=0xD4
+mkone.menu.mhz.production.bootloader.extended_fuses=0xFD
+mkone.menu.mhz.production.bootloader.file=optiboot_atmega328_pro_16MHz_BLINKD9.hex
+mkone.menu.mhz.production.upload.speed=115200
+mkone.menu.mhz.production.build.f_cpu=16000000L
+
+##############
+mkone.menu.mhz.b16_r16=Run@16MHz, Boot@16MHz, BOD@1.8V
+mkone.menu.mhz.b16_r16.bootloader.low_fuses=0xDE
+mkone.menu.mhz.b16_r16.bootloader.file=optiboot_atmega328_pro_16MHz_BLINKD9.hex
+mkone.menu.mhz.b16_r16.upload.speed=115200
+mkone.menu.mhz.b16_r16.build.f_cpu=16000000L
+
+##############
+mkone.menu.mhz.b16_r8=Run@8MHz, Boot@16MHz, BOD@1.8V
+mkone.menu.mhz.b16_r8.bootloader.low_fuses=0xDE
+mkone.menu.mhz.b16_r8.bootloader.file=optiboot_atmega328_pro_16MHz_BLINKD9.hex
+mkone.menu.mhz.b16_r8.upload.speed=115200
+mkone.menu.mhz.b16_r8.build.f_cpu=8000000L
+
+##############
+mkone.menu.mhz.b16_r4=Run@4MHz, Boot@16MHz, BOD@1.8V
+mkone.menu.mhz.b16_r4.bootloader.low_fuses=0xDE
+mkone.menu.mhz.b16_r4.bootloader.file=optiboot_atmega328_pro_16MHz_BLINKD9.hex
+mkone.menu.mhz.b16_r4.upload.speed=115200
+mkone.menu.mhz.b16_r4.build.f_cpu=4000000L
+
+
+##############
+mkone.menu.mhz.b2_r16=Run@16MHz, Boot@2MHz, BOD@1.8V
+mkone.menu.mhz.b2_r16.upload.speed=9600
+mkone.menu.mhz.b2_r16.build.f_cpu=16000000L
+
+##############
+mkone.menu.mhz.b2_r8=Run@8MHz, Boot@2MHz, BOD@1.8V
+mkone.menu.mhz.b2_r8.upload.speed=9600
+mkone.menu.mhz.b2_r8.build.f_cpu=8000000L
+
+##############
+mkone.menu.mhz.b2_r4=Run@4MHz, Boot@2MHz, BOD@1.8V
+mkone.menu.mhz.b2_r4.upload.speed=9600
+mkone.menu.mhz.b2_r4.build.f_cpu=4000000L

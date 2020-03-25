@@ -1,0 +1,29 @@
+# RadinoL4
+
+##############################################################
+radinol4usb.name=RadinoL4 USB-Load
+
+radinol4usb.upload.tool=maple_upload
+radinol4usb.upload.tool_ver=0.9.2
+radinol4usb.upload.protocol=maple_dfu
+radinol4usb.upload.maximum_size=262144
+radinol4usb.upload.use_1200bps_touch=false
+radinol4usb.upload.file_type=bin
+radinol4usb.upload.ram.maximum_size=65536
+radinol4usb.upload.flash.maximum_size=262144
+radinol4usb.upload.usbID=0483:df11
+radinol4usb.upload.altID=0
+radinol4usb.upload.auto_reset=true
+
+radinol4usb.build.mcu=cortex-m4
+radinol4usb.build.f_cpu=80000000L
+radinol4usb.build.board=RADINOL4
+radinol4usb.build.core=stm32l4
+#radinol4usb.build.ldscript=support/ld/STM32L433CCT6.ld
+radinol4usb.build.ldscript=../../cores/stm32l4/support/ld/STM32L433CCT6.ld
+radinol4usb.build.variant=stm32l4
+radinol4usb.build.variant_system_lib=stm32l4_hal.a
+radinol4usb.build.vect=VECT_TAB_BASE
+radinol4usb.build.error_led_port=GPIOB
+radinol4usb.build.error_led_pin=1
+radinol4usb.build.gcc_ver=gcc-arm-none-eabi-4.8.3-2014q1

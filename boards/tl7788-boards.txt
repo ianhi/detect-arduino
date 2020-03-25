@@ -1,0 +1,20 @@
+
+TL7788.name=TL7788
+TL7788.build.board=TL7788
+TL7788.build.mcu=cortex-m0
+TL7788.build.f_cpu=16000000
+TL7788.build.core=arduino
+TL7788.build.extra_flags=-mthumb -D__RFduino__
+TL7788.build.ldscript=linker_scripts/gcc/RFduino.ld
+TL7788.build.variant=RFduino
+TL7788.build.variant_system_include="-I{build.system.path}/RFduino" "-I{build.system.path}/RFduino/include" "-I{build.system.path}/CMSIS/CMSIS/Include"
+TL7788.build.variant_system_lib=libRFduinoSystem.a
+
+TL7788.upload.tool=NFLoader
+
+# required to avoid arduino ide exception on upload
+TL7788.upload.protocol=
+
+# sizer will not run if this is not defined
+# 128KB
+TL7788.upload.maximum_size=131072

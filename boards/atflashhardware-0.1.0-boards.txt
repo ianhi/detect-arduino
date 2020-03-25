@@ -1,0 +1,236 @@
+menu.clock=Clock
+
+##############################################################
+
+ATISP328.name=ATmega328P (ISP)(Int. 8 MHz)(Shift!)
+
+ATISP328.build.mcu=atmega328p
+ATISP328.build.f_cpu=8000000L
+ATISP328.build.core=arduino:arduino
+ATISP328.build.variant=arduino:standard
+# build.board added by me
+ATISP328.build.board=atisp328
+
+ATISP328.bootloader.tool=arduino:avrdude
+# no               .protocol
+# no               .speed
+ATISP328.bootloader.low_fuses=0xE2
+ATISP328.bootloader.high_fuses=0xDA
+ATISP328.bootloader.extended_fuses=0x05
+ATISP328.bootloader.file=ATmegaBOOT_168_atmega328_pro_8MHz.hex
+ATISP328.bootloader.unlock_bits=0x3F
+ATISP328.bootloader.lock_bits=0x0F
+
+ATISP328.upload.tool=arduino:avrdude
+ATISP328.upload.protocol=arduino
+ATISP328.upload.speed=57600
+ATISP328.upload.maximum_size=32768
+# no           .maximum_data_size
+
+# no   .program section
+
+# no   .erase section
+
+################################################################################
+
+ATISP84.name=ATtiny84A (ISP)
+
+ATISP84.build.mcu=attiny84
+# below      .f_cpu
+ATISP84.build.core=arduino:arduino
+ATISP84.build.variant=tiny14
+ATISP84.build.board=atisp84
+
+ATISP84.bootloader.tool=arduino:avrdude
+# no              .protocol
+# no              .speed
+# below           .low_fuses
+# below           .high_fuses
+# below           .extended_fuses
+ATISP84.bootloader.unlock_bits=0xff
+ATISP84.bootloader.lock_bits=0xff
+
+ATISP84.upload.tool=arduino:avrdude
+# no          .protocol
+# no          .speed
+ATISP84.upload.maximum_size=8192
+ATISP84.upload.maximum_data_size=512
+
+# no   .program section
+
+# no   .erase section
+
+ATISP84.menu.clock.internal8=Internal 8 MHz
+ATISP84.menu.clock.internal8.build.f_cpu=8000000L
+ATISP84.menu.clock.internal8.bootloader.low_fuses=0xe2
+ATISP84.menu.clock.internal8.bootloader.high_fuses=0xdf
+ATISP84.menu.clock.internal8.bootloader.extended_fuses=0xff
+
+ATISP84.menu.clock.external16=External 16 MHz
+ATISP84.menu.clock.external16.build.f_cpu=16000000L
+ATISP84.menu.clock.external16.bootloader.low_fuses=0xfe
+ATISP84.menu.clock.external16.bootloader.high_fuses=0xdf
+ATISP84.menu.clock.external16.bootloader.extended_fuses=0xff
+
+ATISP84.menu.clock.external20=External 20 MHz
+ATISP84.menu.clock.external20.build.f_cpu=20000000L
+ATISP84.menu.clock.external20.bootloader.low_fuses=0xfe
+ATISP84.menu.clock.external20.bootloader.high_fuses=0xdf
+ATISP84.menu.clock.external20.bootloader.extended_fuses=0xff
+
+
+################################################################################
+
+ATISP85.name=ATtiny85 (ISP)
+
+ATISP85.build.mcu=attiny85
+# below      .f_cpu
+ATISP85.build.core=arduino:arduino
+ATISP85.build.variant=tiny8
+ATISP85.build.board=atisp85
+
+ATISP85.bootloader.tool=arduino:avrdude
+# no              .protocol
+# no              .speed
+# below           .low_fuses
+# below           .high_fuses
+# below           .extended_fuses
+ATISP85.bootloader.unlock_bits=0xff
+ATISP85.bootloader.lock_bits=0xff
+
+
+ATISP85.upload.tool=arduino:avrdude
+# no          .protocol
+# no          .speed
+ATISP85.upload.maximum_size=8192
+ATISP85.upload.maximum_data_size=512
+
+# no   .program section
+
+# no   .erase section
+
+ATISP85.menu.clock.internal8=Internal 8 MHz
+ATISP85.menu.clock.internal8.build.f_cpu=8000000L
+ATISP85.menu.clock.internal8.bootloader.low_fuses=0xe2
+ATISP85.menu.clock.internal8.bootloader.high_fuses=0xdf
+ATISP85.menu.clock.internal8.bootloader.extended_fuses=0xff
+
+ATISP85.menu.clock.internal16=Internal 16 MHz
+ATISP85.menu.clock.internal16.build.f_cpu=16000000L
+ATISP85.menu.clock.internal16.bootloader.low_fuses=0xf1
+ATISP85.menu.clock.internal16.bootloader.high_fuses=0xdf
+ATISP85.menu.clock.internal16.bootloader.extended_fuses=0xff
+
+ATISP85.menu.clock.external16=External 16 MHz
+ATISP85.menu.clock.external16.build.f_cpu=16000000L
+ATISP85.menu.clock.external16.bootloader.low_fuses=0xfe
+ATISP85.menu.clock.external16.bootloader.high_fuses=0xdf
+ATISP85.menu.clock.external16.bootloader.extended_fuses=0xff
+
+ATISP85.menu.clock.external20=External 20 MHz
+ATISP85.menu.clock.external20.build.f_cpu=20000000L
+ATISP85.menu.clock.external20.bootloader.low_fuses=0xfe
+ATISP85.menu.clock.external20.bootloader.high_fuses=0xdf
+ATISP85.menu.clock.external20.bootloader.extended_fuses=0xff
+
+##############################################################
+
+ATTSB328.name=ATmega328P (TSB)(Int. 8 MHz)
+
+ATTSB328.build.mcu=atmega328p
+ATTSB328.build.f_cpu=8000000L
+ATTSB328.build.core=arduino:arduino
+ATTSB328.build.variant=arduino:standard
+ATTSB328.build.board=attsb328
+
+ATTSB328.bootloader.tool=arduino:avrdude
+# no               .protocol
+# no               .speed
+ATTSB328.bootloader.low_fuses=0xE2
+ATTSB328.bootloader.high_fuses=0xDA
+ATTSB328.bootloader.extended_fuses=0x05
+ATTSB328.bootloader.file=tsb_m328p_d0d1_20161027.hex
+
+ATTSB328.upload.tool=tsb
+ATTSB328.upload.protocol=arduinoisp
+ATTSB328.upload.speed=9600
+# TODO How to determine size ?
+ATTSB328.upload.maximum_size=32256
+# no           .maximum_data_size
+
+# no   .program section
+
+# no   .erase section
+
+################################################################################
+
+ATTSB84.name=ATtiny84A (TSB)(Int. 8 MHz)
+
+ATTSB84.build.mcu=attiny84
+ATTSB84.build.f_cpu=8000000L
+ATTSB84.build.core=arduino:arduino
+ATTSB84.build.variant=tiny14
+ATTSB84.build.board=attsb84
+
+ATTSB84.bootloader.tool=arduino:avrdude
+ATTSB84.bootloader.protocol=arduinoisp
+ATTSB84.bootloader.speed=19200
+ATTSB84.bootloader.low_fuses=0xe2
+ATTSB84.bootloader.high_fuses=0xdf
+ATTSB84.bootloader.extended_fuses=0xfe
+ATTSB84.bootloader.file=tsb_tn84a_b1b0_20161027.hex
+# no              .unlock_bits
+# no              .lock_bits
+
+ATTSB84.upload.tool=tsb
+ATTSB84.upload.protocol=arduinoisp
+ATTSB84.upload.speed=9600
+ATTSB84.upload.maximum_size=7552
+# no          .maximum_data_size
+
+ATTSB84.program.tool=arduino:avrdude
+ATTSB84.program.protocol=arduinoisp
+ATTSB84.program.speed=19200
+ATTSB84.program.maximum_size=8192
+
+ATTSB84.erase.tool=arduino:avrdude
+ATTSB84.erase.protocol=arduinoisp
+ATTSB84.erase.speed=19200
+ATTSB84.erase.maximum_size=8192
+
+################################################################################
+
+ATTSB85.name=ATtiny85 (TSB)(Int. 8 MHz)
+
+ATTSB85.build.mcu=attiny85
+ATTSB85.build.f_cpu=8000000L
+ATTSB85.build.core=arduino:arduino
+ATTSB85.build.variant=tiny8
+ATTSB85.build.board=attsb85
+
+ATTSB85.bootloader.tool=arduino:avrdude
+ATTSB85.bootloader.protocol=arduinoisp
+ATTSB85.bootloader.speed=19200
+ATTSB85.bootloader.low_fuses=0xe2
+ATTSB85.bootloader.high_fuses=0xdf
+ATTSB85.bootloader.extended_fuses=0xfe
+ATTSB85.bootloader.file=tsb_tn85_b4b3_20161027.hex
+# no              .unlock_bits
+# no              .lock_bits
+
+ATTSB85.upload.tool=tsb
+ATTSB85.upload.protocol=arduinoisp
+ATTSB85.upload.speed=9600
+ATTSB85.upload.maximum_size=7552
+# no          .maximum_data_size
+
+ATTSB85.program.tool=arduino:avrdude
+ATTSB85.program.protocol=arduinoisp
+ATTSB85.program.speed=19200
+ATTSB85.program.maximum_size=8192
+
+ATTSB85.erase.tool=arduino:avrdude
+ATTSB85.erase.protocol=arduinoisp
+ATTSB85.erase.speed=19200
+ATTSB85.erase.maximum_size=8192
+

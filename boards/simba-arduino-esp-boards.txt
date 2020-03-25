@@ -1,0 +1,139 @@
+#
+# @section License
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2014-2017, Erik Moqvist
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use, copy,
+# modify, merge, publish, distribute, sublicense, and/or sell copies
+# of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+# BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+# ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# This file is part of the Simba project.
+#
+##################################################################
+
+esp01.name=ESP01
+
+esp01.upload.tool=esptool
+esp01.upload.speed=115200
+esp01.upload.resetmethod=ck
+esp01.upload.maximum_size=434160
+esp01.upload.maximum_data_size=81920
+esp01.upload.wait_for_upload_port=true
+esp01.serial.disableDTR=true
+esp01.serial.disableRTS=true
+
+esp01.build.mcu=esp8266
+esp01.build.f_cpu=80000000L
+esp01.build.board=ESP01
+esp01.build.variant=esp01
+esp01.build.core=Simba:simba
+esp01.build.ldscript=simba.flash.1m.ld
+esp01.build.flash_size=512K
+esp01.build.flash_mode=dio
+esp01.build.flash_freq=40
+
+esp01.compiler.c.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fno-inline-functions -fsingle-precision-constant -fdata-sections -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/esp01/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/esp01" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_ESP01 -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+esp01.compiler.cpp.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fdata-sections -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/esp01/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/esp01" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_ESP01 -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+esp01.compiler.c.elf.extra_flags=-Wl,-Tsimba.flash.512k.ld -u call_user_start -Wl,--cref -nostdlib -Wl,-EL -mtext-section-literals -Wl,--gc-sections -Wl,--gc-sections "-L{runtime.platform.path}/variants/esp01/src/mcus/esp8266/ld" "-L{runtime.platform.path}/variants/esp01/3pp/ESP8266_RTOS_SDK/lib" -L{runtime.platform.path}/lib
+esp01.compiler.c.elf.libs=-lhal -lgcc -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lfreertos -llwip -lm -lminic
+
+##################################################################
+
+esp12e.name=ESP12E
+
+esp12e.upload.tool=esptool
+esp12e.upload.speed=115200
+esp12e.upload.resetmethod=ck
+esp12e.upload.maximum_size=1044464
+esp12e.upload.maximum_data_size=81920
+esp12e.upload.wait_for_upload_port=true
+esp12e.serial.disableDTR=true
+esp12e.serial.disableRTS=true
+
+esp12e.build.mcu=esp8266
+esp12e.build.f_cpu=80000000L
+esp12e.build.board=ESP12E
+esp12e.build.variant=esp12e
+esp12e.build.core=Simba:simba
+esp12e.build.flash_size=4M
+esp12e.build.flash_mode=dio
+esp12e.build.flash_freq=40
+
+esp12e.compiler.c.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fno-inline-functions -fsingle-precision-constant -fdata-sections -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/esp12e/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/esp12e" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_ESP12E -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+esp12e.compiler.cpp.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fdata-sections -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/esp12e/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/esp12e" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_ESP12E -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+esp12e.compiler.c.elf.extra_flags=-Wl,-Tsimba.flash.4m.ld -u call_user_start -Wl,--cref -nostdlib -Wl,-EL -mtext-section-literals -Wl,--gc-sections -Wl,--gc-sections "-L{runtime.platform.path}/variants/esp12e/src/mcus/esp8266/ld" "-L{runtime.platform.path}/variants/esp12e/3pp/ESP8266_RTOS_SDK/lib" -L{runtime.platform.path}/lib
+esp12e.compiler.c.elf.libs=-lhal -lgcc -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lfreertos -llwip -lm -lminic
+
+##################################################################
+
+nodemcu.name=NodeMCU
+
+nodemcu.upload.tool=esptool
+nodemcu.upload.speed=115200
+nodemcu.upload.resetmethod=nodemcu
+nodemcu.upload.maximum_size=1044464
+nodemcu.upload.maximum_data_size=81920
+nodemcu.upload.wait_for_upload_port=true
+nodemcu.serial.disableDTR=true
+nodemcu.serial.disableRTS=true
+
+nodemcu.build.mcu=esp8266
+nodemcu.build.f_cpu=80000000L
+nodemcu.build.board=NodeMCU
+nodemcu.build.variant=nodemcu
+nodemcu.build.core=Simba:simba
+nodemcu.build.flash_size=4M
+nodemcu.build.flash_mode=qio
+nodemcu.build.flash_freq=40
+
+nodemcu.compiler.c.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fno-inline-functions -fsingle-precision-constant -fdata-sections -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/nodemcu/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/nodemcu" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_NODEMCU -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+nodemcu.compiler.cpp.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fdata-sections -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/nodemcu/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/nodemcu" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_NODEMCU -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+nodemcu.compiler.c.elf.extra_flags=-Wl,-Tsimba.flash.4m.ld -u call_user_start -Wl,--cref -nostdlib -Wl,-EL -mtext-section-literals -Wl,--gc-sections -Wl,--gc-sections "-L{runtime.platform.path}/variants/nodemcu/src/mcus/esp8266/ld" "-L{runtime.platform.path}/variants/nodemcu/3pp/ESP8266_RTOS_SDK/lib" -L{runtime.platform.path}/lib
+nodemcu.compiler.c.elf.libs=-lhal -lgcc -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lfreertos -llwip -lm -lminic
+
+##################################################################
+
+huzzah.name=Huzzah
+
+huzzah.upload.tool=esptool
+huzzah.upload.speed=115200
+huzzah.upload.resetmethod=nodemcu
+huzzah.upload.maximum_size=1044464
+huzzah.upload.maximum_data_size=81920
+huzzah.upload.wait_for_upload_port=true
+huzzah.serial.disableDTR=true
+huzzah.serial.disableRTS=true
+
+huzzah.build.mcu=esp8266
+huzzah.build.f_cpu=80000000L
+huzzah.build.board=Huzzah
+huzzah.build.variant=huzzah
+huzzah.build.core=Simba:simba
+huzzah.build.flash_size=4M
+huzzah.build.flash_mode=qio
+huzzah.build.flash_freq=40
+
+huzzah.compiler.c.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fno-inline-functions -fsingle-precision-constant -fdata-sections -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/huzzah/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/huzzah" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_HUZZAH -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+huzzah.compiler.cpp.extra_flags=-Os -Werror -nostdlib -mlongcalls -mtext-section-literals -ffunction-sections -fdata-sections -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/huzzah/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/huzzah" "-I{runtime.platform.path}/cores/simba/src/mcus/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/extra_include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/espressif/esp8266" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/ESP8266_RTOS_SDK/include/lwip/ipv6" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/esp/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/esp" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ESP -DFAMILY_ESP -DMCU_ESP8266 -DBOARD_HUZZAH -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=80000000UL -DICACHE_FLASH -D__STRICT_ANSI__ -D__ets__
+huzzah.compiler.c.elf.extra_flags=-Wl,-Tsimba.flash.4m.ld -u call_user_start -Wl,--cref -nostdlib -Wl,-EL -mtext-section-literals -Wl,--gc-sections -Wl,--gc-sections "-L{runtime.platform.path}/variants/huzzah/src/mcus/esp8266/ld" "-L{runtime.platform.path}/variants/huzzah/3pp/ESP8266_RTOS_SDK/lib" -L{runtime.platform.path}/lib
+huzzah.compiler.c.elf.libs=-lhal -lgcc -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lfreertos -llwip -lm -lminic
+
+##################################################################

@@ -1,0 +1,61 @@
+#
+# @section License
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2014-2017, Erik Moqvist
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use, copy,
+# modify, merge, publish, distribute, sublicense, and/or sell copies
+# of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+# BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+# ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# This file is part of the Simba project.
+#
+##################################################################
+
+arduino_due_x_dbg.name=Arduino Due (Programming Port)
+arduino_due_x_dbg.vid.0=0x2341
+arduino_due_x_dbg.pid.0=0x003d
+arduino_due_x_dbg.vid.1=0x2A03
+arduino_due_x_dbg.pid.1=0x003d
+
+arduino_due_x_dbg.upload.tool=bossac
+arduino_due_x_dbg.upload.protocol=sam-ba
+arduino_due_x_dbg.upload.maximum_size=524288
+arduino_due_x_dbg.upload.use_1200bps_touch=true
+arduino_due_x_dbg.upload.wait_for_upload_port=false
+arduino_due_x_dbg.upload.native_usb=false
+
+arduino_due_x_dbg.build.mcu=cortex-m3
+arduino_due_x_dbg.build.f_cpu=84000000L
+arduino_due_x_dbg.build.usb_manufacturer="Arduino LLC"
+arduino_due_x_dbg.build.usb_product="Arduino Due"
+arduino_due_x_dbg.build.board=SAM_DUE
+arduino_due_x_dbg.build.extra_flags=
+arduino_due_x_dbg.build.variant_system_lib=
+arduino_due_x_dbg.build.vid=0x2341
+arduino_due_x_dbg.build.pid=0x003e
+arduino_due_x_dbg.build.variant=arduino_due
+arduino_due_x_dbg.build.core=Simba:simba
+
+arduino_due_x_dbg.compiler.c.extra_flags=-O2 -Werror -mthumb -mcpu=cortex-m3 -ffunction-sections -fdata-sections -fpack-struct -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_due/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_due" "-I{runtime.platform.path}/cores/simba/src/mcus/sam" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/sam" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/arm/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/sam" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ARM -DFAMILY_SAM -DMCU_SAM3X8E -DBOARD_ARDUINO_DUE -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=84000000UL
+arduino_due_x_dbg.compiler.cpp.extra_flags=-O2 -Werror -mthumb -mcpu=cortex-m3 -ffunction-sections -fdata-sections -fpack-struct -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_due/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_due" "-I{runtime.platform.path}/cores/simba/src/mcus/sam" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/sam" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/arm/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/sam" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" "-I{runtime.platform.path}/cores/simba/3pp/atto" "-I{runtime.platform.path}/cores/simba/3pp/atto/curses" -DARCH_ARM -DFAMILY_SAM -DMCU_SAM3X8E -DBOARD_ARDUINO_DUE -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=84000000UL
+arduino_due_x_dbg.compiler.c.elf.extra_flags=-mcpu=cortex-m3 -Wl,--cref -Tscript.ld -mthumb -Wl,--gc-sections "-L{runtime.platform.path}/variants/arduino_due/src/mcus/sam3x8e"
+
+##################################################################

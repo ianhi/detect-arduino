@@ -1,0 +1,52 @@
+# RedBear Duo (Native USB Port)
+# ---------------------------------------
+RedBear_Duo_native.name=RedBear Duo (Native USB Port)
+
+RedBear_Duo_native.upload.tool=avrdude
+RedBear_Duo_native.upload.protocol=avr109
+RedBear_Duo_native.upload.maximum_size=262144
+RedBear_Duo_native.upload.speed=19200
+RedBear_Duo_native.upload.disable_flushing=true
+RedBear_Duo_native.upload.use_1200bps_touch=true
+RedBear_Duo_native.upload.wait_for_upload_port=true
+
+RedBear_Duo_native.build.mcu=cortex-m3
+RedBear_Duo_native.build.f_cpu=120000000
+RedBear_Duo_native.build.usb_product="Arduino RBL"
+RedBear_Duo_native.build.board=RedBear_Duo
+RedBear_Duo_native.build.core=RedBear_Duo
+RedBear_Duo_native.build.variant=RedBear_Duo
+
+RedBear_Duo_native.bootloader.tool=fw_loader
+
+
+# RedBear Duo (RBLink USB Port)
+# ---------------------------------------
+RedBear_Duo.name=RedBear Duo (RBLink USB Port)
+RedBear_Duo.vid.0=0x0483
+RedBear_Duo.pid.0=0x374B
+
+RedBear_Duo.upload.tool=openocd
+RedBear_Duo.upload.protocol=
+RedBear_Duo.upload.maximum_size=262144
+RedBear_Duo.upload.use_1200bps_touch=false
+RedBear_Duo.upload.wait_for_upload_port=false
+RedBear_Duo.upload.native_usb=false
+
+RedBear_Duo.build.mcu=cortex-m3
+RedBear_Duo.build.f_cpu=120000000
+RedBear_Duo.build.usb_product="Arduino RBL"
+RedBear_Duo.build.board=RedBear_Duo
+RedBear_Duo.build.core=RedBear_Duo
+RedBear_Duo.build.variant=RedBear_Duo
+RedBear_Duo.build.openocdscript=openocd_scripts/redbear_duo.cfg
+
+RedBear_Duo.bootloader.tool=openocd
+RedBear_Duo.bootloader.bootloader_file=duo-bootloader-r6.bin
+RedBear_Duo.bootloader.bootloader_loc=0x8000000
+RedBear_Duo.bootloader.system_part1_file=duo-system-part1-v0.3.3.bin
+RedBear_Duo.bootloader.system_part1_loc=0x8020000
+RedBear_Duo.bootloader.system_part2_file=duo-system-part2-v0.3.3.bin
+RedBear_Duo.bootloader.system_part2_loc=0x8040000
+RedBear_Duo.bootloader.user_part_file=duo-user-part.bin
+RedBear_Duo.bootloader.user_part_loc=0x80c0000

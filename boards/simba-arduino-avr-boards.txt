@@ -1,0 +1,138 @@
+#
+# @section License
+#
+# The MIT License (MIT)
+#
+# Copyright (c) 2014-2017, Erik Moqvist
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use, copy,
+# modify, merge, publish, distribute, sublicense, and/or sell copies
+# of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+# BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+# ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# This file is part of the Simba project.
+#
+##################################################################
+
+mega2560.name=Arduino Mega
+mega2560.upload.tool=avrdude
+mega2560.upload.protocol=wiring
+mega2560.upload.maximum_size=253952
+mega2560.upload.maximum_data_size=8192
+mega2560.upload.maximum_eeprom_size=4096
+mega2560.upload.speed=115200
+
+mega2560.bootloader.tool=avrdude
+mega2560.bootloader.low_fuses=0xff
+mega2560.bootloader.high_fuses=0xd8
+mega2560.bootloader.extended_fuses=0xfd
+
+mega2560.build.mcu=atmega2560
+mega2560.build.f_cpu=16000000L
+mega2560.build.board=ARDUINO_MEGA2560
+mega2560.build.variant=arduino_mega
+mega2560.build.core=Simba:simba
+mega2560.build.main_stack_end=0x802200
+
+mega2560.compiler.c.extra_flags=-mmcu=atmega2560 -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_mega/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_mega" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega2560" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA2560 -DBOARD_ARDUINO_MEGA -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+mega2560.compiler.cpp.extra_flags=-mmcu=atmega2560 -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_mega/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_mega" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega2560" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA2560 -DBOARD_ARDUINO_MEGA -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+##################################################################
+
+nano.name=Arduino Nano
+nano.upload.tool=avrdude
+nano.upload.protocol=arduino
+nano.upload.maximum_size=30720
+nano.upload.maximum_data_size=2048
+nano.upload.maximum_eeprom_size=1024
+nano.upload.speed=57600
+
+nano.bootloader.tool=avrdude
+nano.bootloader.low_fuses=0xff
+nano.bootloader.high_fuses=0xda
+nano.bootloader.extended_fuses=0x05
+
+nano.build.mcu=atmega328p
+nano.build.f_cpu=16000000L
+nano.build.board=ARDUINO_NANO
+nano.build.variant=arduino_nano
+nano.build.core=Simba:simba
+nano.build.main_stack_end=0x800900
+
+nano.compiler.c.extra_flags=-mmcu=atmega328p -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_nano/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_nano" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega328p" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA328P -DBOARD_ARDUINO_NANO -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+nano.compiler.cpp.extra_flags=-mmcu=atmega328p -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_nano/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_nano" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega328p" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA328P -DBOARD_ARDUINO_NANO -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+##################################################################
+
+uno.name=Arduino Uno
+uno.upload.tool=avrdude
+uno.upload.protocol=arduino
+uno.upload.maximum_size=30720
+uno.upload.maximum_data_size=2048
+uno.upload.maximum_eeprom_size=1024
+uno.upload.speed=115200
+
+uno.bootloader.tool=avrdude
+uno.bootloader.low_fuses=0xff
+uno.bootloader.high_fuses=0xde
+uno.bootloader.extended_fuses=0x05
+
+uno.build.mcu=atmega328p
+uno.build.f_cpu=16000000L
+uno.build.board=ARDUINO_UNO
+uno.build.variant=arduino_uno
+uno.build.core=Simba:simba
+uno.build.main_stack_end=0x800900
+
+uno.compiler.c.extra_flags=-mmcu=atmega328p -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_uno/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_uno" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega328p" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA328P -DBOARD_ARDUINO_UNO -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+uno.compiler.cpp.extra_flags=-mmcu=atmega328p -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_uno/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_uno" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega328p" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA328P -DBOARD_ARDUINO_UNO -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+##################################################################
+
+pro-micro.name=Arduino Pro Micro
+pro-micro.upload.tool=avrdude
+pro-micro.upload.protocol=avr109
+pro-micro.upload.maximum_size=28672
+pro-micro.upload.maximum_data_size=2560
+pro-micro.upload.maximum_eeprom_size=1024
+pro-micro.upload.speed=57600
+pro-micro.upload.disable_flushing=true
+pro-micro.upload.use_1200bps_touch=true
+pro-micro.upload.wait_for_upload_port=true
+
+pro-micro.bootloader.path=caterina
+pro-micro.bootloader.tool=avrdude
+pro-micro.bootloader.low_fuses=0xff
+pro-micro.bootloader.high_fuses=0xd8
+pro-micro.bootloader.extended_fuses=0xcb
+
+pro-micro.build.mcu=atmega32u4
+pro-micro.build.f_cpu=16000000L
+pro-micro.build.board=ARDUINO_PRO_MICRO
+pro-micro.build.variant=arduino_pro_micro
+pro-micro.build.core=Simba:simba
+pro-micro.build.main_stack_end=0x800900
+
+pro-micro.compiler.c.extra_flags=-mmcu=atmega32u4 -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=gnu99 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_pro_micro/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_pro_micro" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega32u4" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA32U4 -DBOARD_ARDUINO_PRO_MICRO -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+pro-micro.compiler.cpp.extra_flags=-mmcu=atmega32u4 -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -c -Wall -funsigned-bitfields -std=c++11 -Wno-error=unused-variable "-I{runtime.platform.path}/cores/simba/build/arduino_pro_micro/gen" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/src/boards/arduino_pro_micro" "-I{runtime.platform.path}/cores/simba/src/mcus/atmega32u4" "-I{runtime.platform.path}/cores/simba/src" "-I{runtime.platform.path}/cores/simba/3pp/compat" "-I{runtime.platform.path}/cores/simba/src/drivers/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include" "-I{runtime.platform.path}/cores/simba/3pp/lwip-1.4.1/src/include/ipv4" "-I{runtime.platform.path}/cores/simba/3pp/mbedtls/include" "-I{runtime.platform.path}/cores/simba/src/kernel/ports/avr/gnu" "-I{runtime.platform.path}/cores/simba/src/oam/ports/avr" "-I{runtime.platform.path}/cores/simba/3pp/spiffs-0.3.5/src" -DARCH_AVR -DFAMILY_AVR -DMCU_ATMEGA32U4 -DBOARD_ARDUINO_PRO_MICRO -DVERSION=15.0.3 -DMBEDTLS_USER_CONFIG_FILE="mbedtls/user_config.h" -DF_CPU=16000000UL -D__DELAY_BACKWARD_COMPATIBLE__
+
+##################################################################

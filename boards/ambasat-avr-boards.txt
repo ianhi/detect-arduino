@@ -1,0 +1,72 @@
+# AmbaSat Contribution Platform Configuration
+#
+# For more information see:
+# * https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification
+# * https://github.com/arduino/Arduino/wiki/Arduino-Hardware-Cores-migration-guide-from-1.0-to-1.6
+#
+
+##############################################
+## AmbaSat-1 Satellite board based on AVR MCUs 
+##############################################
+
+menu.mhz=CPU Speed
+
+ambasatnode.name=AmbaSat-1 Satellite
+
+ambasatnode.upload.tool=arduino:avrdude
+ambasatnode.upload.protocol=arduino
+ambasatnode.upload.maximum_size=30720
+ambasatnode.upload.maximum_data_size=2048
+
+ambasatnode.bootloader.tool=arduino:avrdude
+ambasatnode.bootloader.unlock_bits=0x3F
+ambasatnode.bootloader.lock_bits=0x2F
+ambasatnode.bootloader.high_fuses=0xD6
+ambasatnode.bootloader.extended_fuses=0x06
+
+# BOD accepted values:
+#bootloader.extended_fuses=0x04 -> BOD at 4.3V
+#bootloader.extended_fuses=0x05 -> BOD at 2.7V
+#bootloader.extended_fuses=0x06 -> BOD at 1.8V
+#bootloader.extended_fuses=0x07 -> BOD disabled
+#
+#  Clock speeds.
+#
+ambasatnode.menu.mhz.1MHz=1 MHz internal 
+ambasatnode.menu.mhz.1MHz.upload.speed=9600
+ambasatnode.menu.mhz.1MHz.bootloader.low_fuses=0x62
+ambasatnode.menu.mhz.1MHz.build.f_cpu=1000000L
+ambasatnode.menu.mhz.1MHz.bootloader.file=ambasatboot/optiboot_flash_atmega328p_UART0_9600_1000000L.hex
+
+ambasatnode.menu.mhz.2MHz=2MHz External Crystal (div/8)
+ambasatnode.menu.mhz.2MHz.build.f_cpu=2000000L
+ambasatnode.menu.mhz.2MHz.bootloader.low_fuses=0x6F
+ambasatnode.menu.mhz.2MHz.upload.speed=19200
+ambasatnode.menu.mhz.2MHz.bootloader.file=ambasatboot/ambasatboot_atmega328_2MHz_19200.hex
+
+ambasatnode.menu.mhz.4MHz=4 MHz External Crystal 
+ambasatnode.menu.mhz.4MHz.upload.speed=9600
+ambasatnode.menu.mhz.4MHz.bootloader.low_fuses=0x7D
+ambasatnode.menu.mhz.4MHz.build.f_cpu=4000000L
+ambasatnode.menu.mhz.4MHz.bootloader.file=ambasatboot/optiboot_flash_atmega328p_UART0_9600_4000000L.hex
+
+ambasatnode.menu.mhz.8MHz=8MHz Internal Oscillator
+ambasatnode.menu.mhz.8MHz.build.f_cpu=8000000L
+ambasatnode.menu.mhz.8MHz.bootloader.low_fuses=0xD2
+ambasatnode.menu.mhz.8MHz.upload.speed=57600
+ambasatnode.menu.mhz.8MHz.bootloader.file=ambasatboot/ambasatboot_atmega328_8MHz_57600.hex
+
+ambasatnode.menu.mhz.16MHz=16MHz External Crystal 
+ambasatnode.menu.mhz.16MHz.build.f_cpu=16000000L
+ambasatnode.menu.mhz.16MHz.bootloader.low_fuses=0xEF
+ambasatnode.menu.mhz.16MHz.upload.speed=115200
+ambasatnode.menu.mhz.16MHz.bootloader.file=ambasatboot/ambasatboot_atmega328_16MHz_115200.hex
+
+# AmbaSat platforms are UNO-like... 
+ambasatnode.build.board=AVR_UNO
+ambasatnode.build.core=arduino:arduino
+ambasatnode.build.variant=arduino:eightanaloginputs
+ambasatnode.build.mcu=atmega328p
+
+
+

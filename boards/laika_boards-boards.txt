@@ -1,0 +1,25 @@
+menu.cpu=Processor
+
+##############################################################
+
+explorer.name=Laika Explorer
+explorer.upload.tool=arduino:avrdude
+explorer.upload.protocol=arduino
+explorer.upload.maximum_size=7168
+explorer.upload.speed=19200
+
+explorer.bootloader.tool=arduino:avrdude
+explorer.bootloader.low_fuses=0xe2
+explorer.bootloader.high_fuses=0xdd
+explorer.bootloader.extended_fuses=0xf8
+explorer.bootloader.file=laika/arduino_bootloader_v1_00.hex
+explorer.bootloader.unlock_bits=0x3F
+explorer.bootloader.lock_bits=0x0F
+
+explorer.build.mcu=atmega88
+explorer.build.f_cpu=8000000L
+explorer.build.board=EXPLORER
+explorer.build.core=arduino:arduino
+explorer.build.variant=explorer
+
+##############################################################

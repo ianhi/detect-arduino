@@ -1,0 +1,203 @@
+# For use with Arduino IDE 1.5+
+##############################################################
+
+menu.model=Model
+menu.clock=Clock
+menu.configuration=Board Configuration
+
+##############################################################
+
+ariadne328p.name=ATmega328P(Uno/Mini/Duemilanove/etc.)
+
+ariadne328p.upload.tool=arduino:avrdude
+ariadne328p.upload.maximum_data_size=2048
+ariadne328p.upload.protocol=arduino
+ariadne328p.upload.maximum_size=28672
+
+ariadne328p.bootloader.tool=arduino:avrdude
+ariadne328p.bootloader.high_fuses=0xD8
+ariadne328p.bootloader.extended_fuses=0x05
+ariadne328p.bootloader.unlock_bits=0x3F
+ariadne328p.bootloader.lock_bits=0x0F
+
+ariadne328p.build.mcu=atmega328p
+ariadne328p.build.core=arduino:arduino
+ariadne328p.build.board=AVR_ARIADNE328P
+
+# Model Menu
+ariadne328p.menu.model.uno=Uno
+ariadne328p.menu.model.uno.build.variant=arduino:standard
+ariadne328p.menu.model.uno.build.board=AVR_UNO
+
+ariadne328p.menu.model.duemilanove=Duemilanove or Diecimila
+ariadne328p.menu.model.duemilanove.build.variant=arduino:standard
+ariadne328p.menu.model.duemilanove.build.board=AVR_DUEMILANOVE
+
+ariadne328p.menu.model.nano=Nano
+ariadne328p.menu.model.nano.build.variant=arduino:eightanaloginputs
+ariadne328p.menu.model.nano.build.board=AVR_NANO
+
+ariadne328p.menu.model.mini=Mini
+ariadne328p.menu.model.mini.build.variant=arduino:eightanaloginputs
+ariadne328p.menu.model.mini.build.board=AVR_MINI
+
+ariadne328p.menu.model.bt=BT
+ariadne328p.menu.model.bt.build.variant=arduino:eightanaloginputs
+ariadne328p.menu.model.bt.build.board=AVR_BT
+
+ariadne328p.menu.model.pro=Pro or Pro Mini
+ariadne328p.menu.model.pro.build.variant=arduino:eightanaloginputs
+ariadne328p.menu.model.pro.build.board=AVR_PRO
+
+ariadne328p.menu.model.other6=Other(6 analog inputs)
+ariadne328p.menu.model.other6.build.variant=arduino:standard
+
+ariadne328p.menu.model.other8=Other(8 analog inputs)
+ariadne328p.menu.model.other8.build.variant=arduino:eightanaloginputs
+
+# Clock Menu
+ariadne328p.menu.clock.low_power.upload.speed=115200
+ariadne328p.menu.clock.low_power=16MHz Low Power
+ariadne328p.menu.clock.low_power.bootloader.low_fuses=0xFF
+ariadne328p.menu.clock.low_power.build.f_cpu=16000000L
+
+ariadne328p.menu.clock.full_swing=16MHz Full Swing
+ariadne328p.menu.clock.full_swing.upload.speed=115200
+ariadne328p.menu.clock.full_swing.bootloader.low_fuses=0xF7
+ariadne328p.menu.clock.full_swing.build.f_cpu=16000000L
+
+ariadne328p.menu.clock.8mhz=8MHz Internal
+ariadne328p.menu.clock.8mhz.upload.speed=57600
+ariadne328p.menu.clock.8mhz.bootloader.low_fuses=0xE2
+ariadne328p.menu.clock.8mhz.build.f_cpu=8000000L
+
+# Board Configuration Menu
+ariadne328p.menu.configuration.blink_shield=Ethernet Shield, Blink
+ariadne328p.menu.configuration.blink_shield.bootloader.file=ariadne/ariadne_atmega328_16mhz_blink_shield.hex
+
+ariadne328p.menu.configuration.noblink_shield=Ethernet Shield, No Blink
+ariadne328p.menu.configuration.noblink_shield.bootloader.file=ariadne/ariadne_atmega328_16mhz_noblink_shield.hex
+
+ariadne328p.menu.configuration.blink_notshield=No Ethernet Shield, Blink
+ariadne328p.menu.configuration.blink_notshield.bootloader.file=ariadne/ariadne_atmega328_16mhz_blink_notshield.hex
+
+ariadne328p.menu.configuration.noblink_notshield=No Ethernet Shield, No Blink
+ariadne328p.menu.configuration.noblink_notshield.bootloader.file=ariadne/ariadne_atmega328_16mhz_noblink_notshield.hex
+
+##############################################################
+
+ariadneethernet.name=Arduino Ethernet
+
+ariadneethernet.upload.tool=arduino:avrdude
+ariadneethernet.upload.maximum_data_size=2048
+ariadneethernet.upload.protocol=arduino
+ariadneethernet.upload.maximum_size=28672
+ariadneethernet.upload.speed=115200
+
+ariadneethernet.bootloader.tool=arduino:avrdude
+ariadneethernet.bootloader.low_fuses=0xFF
+ariadneethernet.bootloader.high_fuses=0xD8
+ariadneethernet.bootloader.extended_fuses=0x05
+ariadneethernet.bootloader.unlock_bits=0x3F
+ariadneethernet.bootloader.lock_bits=0x0F
+
+ariadneethernet.build.mcu=atmega328p
+ariadneethernet.build.f_cpu=16000000L
+ariadneethernet.build.core=arduino:arduino
+ariadneethernet.build.variant=arduino:standard
+ariadneethernet.build.board=AVR_ETHERNET
+
+# Board Configuration Menu
+ariadneethernet.menu.configuration.blink=Blink
+ariadneethernet.menu.configuration.blink.bootloader.file=ariadne/ariadne_atmega328_16mhz_blink_arduinoethernet.hex
+
+ariadneethernet.menu.configuration.noblink=No Blink
+ariadneethernet.menu.configuration.noblink.bootloader.file=ariadne/ariadne_atmega328_16mhz_noblink_arduinoethernet.hex
+
+##############################################################
+
+ariadne2560.name=Arduino Mega 2560
+
+ariadne2560.upload.tool=arduino:avrdude
+ariadne2560.upload.maximum_data_size=8192
+ariadne2560.upload.protocol=wiring
+ariadne2560.upload.maximum_size=258048
+ariadne2560.upload.speed=115200
+
+ariadne2560.bootloader.tool=arduino:avrdude
+ariadne2560.bootloader.low_fuses=0xFF
+ariadne2560.bootloader.high_fuses=0xDA
+ariadne2560.bootloader.extended_fuses=0xFD
+ariadne2560.bootloader.unlock_bits=0x3F
+ariadne2560.bootloader.lock_bits=0x0F
+
+ariadne2560.build.mcu=atmega2560
+ariadne2560.build.f_cpu=16000000L
+ariadne2560.build.core=arduino:arduino
+ariadne2560.build.variant=arduino:mega
+ariadne2560.build.board=AVR_MEGA2560
+
+# Board Configuration Menu
+ariadne2560.menu.configuration.blink_shield=Ethernet Shield, Blink
+ariadne2560.menu.configuration.blink_shield.bootloader.file=ariadne/ariadne_atmega2560_16mhz_blink_shield.hex
+
+ariadne2560.menu.configuration.noblink_shield=Ethernet Shield, No Blink
+ariadne2560.menu.configuration.noblink_shield.bootloader.file=ariadne/ariadne_atmega2560_16mhz_noblink_shield.hex
+
+ariadne2560.menu.configuration.blink_notshield=No Ethernet Shield, Blink
+ariadne2560.menu.configuration.blink_notshield.bootloader.file=ariadne/ariadne_atmega2560_16mhz_blink_notshield.hex
+
+ariadne2560.menu.configuration.noblink_notshield=No Ethernet Shield, No Blink
+ariadne2560.menu.configuration.noblink_notshield.bootloader.file=ariadne/ariadne_atmega2560_16mhz_noblink_notshield.hex
+
+##############################################################
+
+ariadne1284p_16mhz_avrdevelopersstandard.name=ATmega1284P 16MHz avr-developers.com Pinout
+
+ariadne1284p_16mhz_avrdevelopersstandard.upload.tool=arduino:avrdude
+ariadne1284p_16mhz_avrdevelopersstandard.upload.protocol=arduino
+ariadne1284p_16mhz_avrdevelopersstandard.upload.maximum_data_size=16384
+ariadne1284p_16mhz_avrdevelopersstandard.upload.maximum_size=126976
+ariadne1284p_16mhz_avrdevelopersstandard.upload.speed=115200
+
+ariadne1284p_16mhz_avrdevelopersstandard.bootloader.tool=arduino:avrdude
+ariadne1284p_16mhz_avrdevelopersstandard.bootloader.high_fuses=0xDA
+ariadne1284p_16mhz_avrdevelopersstandard.bootloader.extended_fuses=0xFD
+ariadne1284p_16mhz_avrdevelopersstandard.bootloader.unlock_bits=0x3F
+ariadne1284p_16mhz_avrdevelopersstandard.bootloader.lock_bits=0x0F
+
+ariadne1284p_16mhz_avrdevelopersstandard.build.mcu=atmega1284p
+ariadne1284p_16mhz_avrdevelopersstandard.build.f_cpu=16000000L
+ariadne1284p_16mhz_avrdevelopersstandard.build.core=arduino:arduino
+ariadne1284p_16mhz_avrdevelopersstandard.build.variant=avr_developers
+ariadne1284p_16mhz_avrdevelopersstandard.build.board=1284P_AVR_DEVELOPERS
+
+# Model Menu
+# Uncomment the following lines to add standard variant support(requires the installation of Mighty 1284P https://github.com/JChristensen/mighty-1284p/tree/v1.6.3)
+#ariadne1284p_16mhz_avrdevelopersstandard.name=ATmega1284P 16MHz avr-developers.com/Mighty 1284P/Mighty Mini 1284P/Goldilocks
+
+#ariadne1284p_16mhz_avrdevelopersstandard.menu.model.avrdevelopers=avr-developers.com
+
+#ariadne1284p_16mhz_avrdevelopersstandard.menu.model.standard=Mighty 1284P/Mighty Mini 1284P/Goldilocks
+#ariadne1284p_16mhz_avrdevelopersstandard.menu.model.standard.build.variant=mighty-1284p:standard
+#ariadne1284p_16mhz_avrdevelopersstandard.menu.model.standard.build.board=1284P_STANDARD
+
+# Clock Menu
+ariadne1284p_16mhz_avrdevelopersstandard.menu.clock.full_swing=Full Swing
+ariadne1284p_16mhz_avrdevelopersstandard.menu.clock.full_swing.bootloader.low_fuses=0xF7
+
+ariadne1284p_16mhz_avrdevelopersstandard.menu.clock.low_power=Low Power
+ariadne1284p_16mhz_avrdevelopersstandard.menu.clock.low_power.bootloader.low_fuses=0xFF
+
+# Board Configuration Menu
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.blink_shield=Ethernet Shield, Blink
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.blink_shield.bootloader.file=ariadne/ariadne_atmega1284p_16mhz_blink_shield_avrdevelopersstandard.hex
+
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.noblink_shield=Ethernet Shield, No Blink
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.noblink_shield.bootloader.file=ariadne/ariadne_atmega1284p_16mhz_noblink_shield_avrdevelopersstandard.hex
+
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.blink_notshield=No Ethernet Shield, Blink
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.blink_notshield.bootloader.file=ariadne/ariadne_atmega1284p_16mhz_blink_notshield_avrdevelopersstandard.hex
+
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.noblink_notshield=No Ethernet Shield, No Blink
+ariadne1284p_16mhz_avrdevelopersstandard.menu.configuration.noblink_notshield.bootloader.file=ariadne/ariadne_atmega1284p_16mhz_noblink_notshield_avrdevelopersstandard.hex
