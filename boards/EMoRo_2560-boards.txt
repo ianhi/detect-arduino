@@ -1,0 +1,45 @@
+##############################################################
+##
+## Define EMoRo 2560
+##			www.emoro.eu
+##
+##############################################################
+
+
+emoro2560.name=EMoRo 2560
+
+
+emoro2560.upload.protocol=wiring
+
+emoro2560.upload.maximum_size=258048
+
+emoro2560.upload.speed=115200
+
+emoro2560.upload.tool=avrdude
+
+
+
+emoro2560.bootloader.low_fuses=0xFF
+
+emoro2560.bootloader.high_fuses=0xD8
+
+emoro2560.bootloader.extended_fuses=0xFD
+
+emoro2560.bootloader.file=EMoRo_stk500v2\stk500boot_v2.1_mega2560.hex
+
+emoro2560.bootloader.unlock_bits=0x3F
+
+emoro2560.bootloader.lock_bits=0x0F
+
+
+emoro2560.build.mcu=atmega2560
+emoro2560.bootloader.tool=avrdude
+
+emoro2560.build.board=AVR_EMORO_2560
+
+emoro2560.build.f_cpu=16000000L
+
+emoro2560.build.core=emoro_core
+emoro2560.build.variant=emoro_variants
+
+##############################################################
