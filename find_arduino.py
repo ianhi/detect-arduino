@@ -9,7 +9,6 @@ def check_ports():
         port,hwid,desc = connection
         vid_pid = re.search(r"(?<=VID\:PID\=)[0-9|A-Z|a-z]{4}\:[0-9|A-Z|a-z]{4}", desc)
         vid_pid = None if vid_pid is None else vid_pid.group()
-        print(vid_pid)
         if vid_pid is None:
             not_arduinos.append(connection)
         else:
