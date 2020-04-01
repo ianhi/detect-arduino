@@ -147,3 +147,5 @@ cython_debug/
 media
 static
 
+# failed downloads
+compressed/*?raw=true
