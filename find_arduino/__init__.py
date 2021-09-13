@@ -2,9 +2,9 @@ try:
     from ._version import __version__
 except:
     __version__ = "unknown"
-from .detection import find_arduino
+from .detection import check_ports
 
 __all__ = [
     "__version__",
-    "find_arduino",
+    "check_ports",
 ]
