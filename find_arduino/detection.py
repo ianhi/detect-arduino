@@ -1,4 +1,4 @@
-from boards import boards_dict
+from .boards import boards_dict
 from serial.tools import list_ports
 import re
 
