@@ -7,4 +7,3 @@ write_to = "find_arduino/_version.py"
 
 [tool.isort]
 profile = "black"
-
