@@ -149,3 +149,5 @@ static
 
 # failed downloads
 compressed/*?raw=true
+
+_version.py
